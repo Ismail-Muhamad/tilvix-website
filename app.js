@@ -741,22 +741,22 @@ function renderVideo(videoObj) {
 
     tvideoWrap.hidden = false;
 
-// YouTube
-if (videoObj.youtubeId) {
-    const id = extractYouTubeId(videoObj.youtubeId);
-    if (!id) return;
+    // YouTube
+    if (videoObj.youtubeId) {
+        const id = extractYouTubeId(videoObj.youtubeId);
+        if (!id) return;
 
-    const params = new URLSearchParams({
-        controls: "0",
-        fs: "0",
-        modestbranding: "1",
-        rel: "0",
-        iv_load_policy: "3",
-        disablekb: "1",
-        playsinline: "1",
-    });
+        const params = new URLSearchParams({
+            controls: "0",
+            fs: "0",
+            modestbranding: "1",
+            rel: "0",
+            iv_load_policy: "3",
+            disablekb: "1",
+            playsinline: "1",
+        });
 
-    tvideoWrap.innerHTML = `
+        tvideoWrap.innerHTML = `
     <div class="ratio">
       <iframe
         src="https://www.youtube-nocookie.com/embed/${id}?${params.toString()}"
@@ -764,16 +764,12 @@ if (videoObj.youtubeId) {
         allow="autoplay; encrypted-media; picture-in-picture"
         allowfullscreen
       ></iframe>
+      
     </div>
   `;
+        return;
+    }
 
-    // هنا تحط منع الكليك يمين
-    tvideoWrap.addEventListener("contextmenu", (e) => {
-        e.preventDefault();
-    });
-
-    return;
-}
 
     // MP4 / WebM
     if (videoObj.mp4Url) {
@@ -895,3 +891,26 @@ $("#toggleDir").addEventListener("click", () => {
     applyLang(lang === "ar" ? "en" : "ar");
     if (!tmodal.hidden && currentProjectEl) renderProjectModal(currentProjectEl);
 });
+
+const videoId = "tdN_iTHqbXI"; // ضع ID الفيديو هنا
+
+let tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+document.body.appendChild(tag);
+
+let player;
+
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player('player', {
+    videoId: videoId,
+    playerVars: {
+      controls: 0,
+      modestbranding: 1,
+      rel: 0
+    }
+  });
+}
+
+document.getElementById("playBtn").onclick = () => {
+  player.playVideo();
+};
