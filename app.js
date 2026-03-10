@@ -767,15 +767,13 @@ if (videoObj.youtubeId) {
     </div>
   `;
 
-    const ratio = tvideoWrap.querySelector(".ratio");
-
-    ratio.addEventListener("contextmenu", function(e){
+    // هنا تحط منع الكليك يمين
+    tvideoWrap.addEventListener("contextmenu", (e) => {
         e.preventDefault();
     });
 
     return;
 }
-
 
     // MP4 / WebM
     if (videoObj.mp4Url) {
