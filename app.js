@@ -892,25 +892,3 @@ $("#toggleDir").addEventListener("click", () => {
     if (!tmodal.hidden && currentProjectEl) renderProjectModal(currentProjectEl);
 });
 
-const videoId = "tdN_iTHqbXI"; // ضع ID الفيديو هنا
-
-let tag = document.createElement('script');
-tag.src = "https://www.youtube.com/iframe_api";
-document.body.appendChild(tag);
-
-let player;
-
-function onYouTubeIframeAPIReady() {
-  player = new YT.Player('player', {
-    videoId: videoId,
-    playerVars: {
-      controls: 0,
-      modestbranding: 1,
-      rel: 0
-    }
-  });
-}
-
-document.getElementById("playBtn").onclick = () => {
-  player.playVideo();
-};
