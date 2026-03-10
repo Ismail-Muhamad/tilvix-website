@@ -1399,6 +1399,7 @@ footer {
 
 .tvideo iframe,
 .tvideo video {
+      pointer-events: none;
     position: absolute;
     inset: 0;
     width: 100%;
