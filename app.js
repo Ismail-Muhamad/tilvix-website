@@ -741,22 +741,22 @@ function renderVideo(videoObj) {
 
     tvideoWrap.hidden = false;
 
-    // YouTube
-    if (videoObj.youtubeId) {
-        const id = extractYouTubeId(videoObj.youtubeId);
-        if (!id) return;
+// YouTube
+if (videoObj.youtubeId) {
+    const id = extractYouTubeId(videoObj.youtubeId);
+    if (!id) return;
 
-        const params = new URLSearchParams({
-            controls: "0",
-            fs: "0",
-            modestbranding: "1",
-            rel: "0",
-            iv_load_policy: "3",
-            disablekb: "1",
-            playsinline: "1",
-        });
+    const params = new URLSearchParams({
+        controls: "0",
+        fs: "0",
+        modestbranding: "1",
+        rel: "0",
+        iv_load_policy: "3",
+        disablekb: "1",
+        playsinline: "1",
+    });
 
-        tvideoWrap.innerHTML = `
+    tvideoWrap.innerHTML = `
     <div class="ratio">
       <iframe
         src="https://www.youtube-nocookie.com/embed/${id}?${params.toString()}"
@@ -764,15 +764,17 @@ function renderVideo(videoObj) {
         allow="autoplay; encrypted-media; picture-in-picture"
         allowfullscreen
       ></iframe>
-      <script>
-document.querySelector(".ratio").addEventListener("contextmenu", function(e){
-    e.preventDefault();
-});
-</script>
     </div>
   `;
-        return;
-    }
+
+    const ratio = tvideoWrap.querySelector(".ratio");
+
+    ratio.addEventListener("contextmenu", function(e){
+        e.preventDefault();
+    });
+
+    return;
+}
 
 
     // MP4 / WebM
