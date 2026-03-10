@@ -764,6 +764,11 @@ function renderVideo(videoObj) {
         allow="autoplay; encrypted-media; picture-in-picture"
         allowfullscreen
       ></iframe>
+      <script>
+document.querySelector(".ratio").addEventListener("contextmenu", function(e){
+    e.preventDefault();
+});
+</script>
     </div>
   `;
         return;
