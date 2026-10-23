@@ -89,7 +89,7 @@ document.addEventListener("click", (e) => {
 $("#scrollTop").addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 
 // ===== Contact form -> WhatsApp (LIVE) =====
-const WA_NUMBER = "201283713447";
+const WA_NUMBER = "201015736978";
 const wa = document.getElementById("waLink");
 if (wa) wa.href = `https://wa.me/${WA_NUMBER}`;
 
@@ -260,9 +260,9 @@ const dict = {
         cinfo: "معلومات عن Tilvix",
         cdesc: "Tilvix فريق تطوير متخصص في <b>Flutter</b>. بنبني تطبيقات <b>موبايل</b> و<b>ديسك توب</b> و<b>ويب</b>، وكمان <b>سيستم كامل</b> حسب طلب العميل. شغلنا عن بُعد حاليًا (بدون مقر ثابت).",
         ci1: "واتساب",
-        ci1v: "+20 1142076661",
+        ci1v: "01015736978",
         ci2: "البريد الإلكتروني",
-        ci2v: "go.to.2008.6.1@gmail.com",
+        ci2v: "contact@tilvix.net",
         ci3: "التخصص",
         ci3v: "Flutter • UI/UX • Performance • Clean Code",
         scrollTop: "فوق ⬆️",
@@ -382,9 +382,9 @@ const dict = {
         cinfo: "About Tilvix",
         cdesc: "Tilvix is a small team specialized in <b>Flutter</b>. We build <b>mobile</b>, <b>desktop</b>, and <b>web</b> apps — and full <b>systems</b> based on your needs. We currently work remotely (no physical office).",
         ci1: "WhatsApp",
-        ci1v: "+20 1142076661",
+        ci1v: "01015736978",
         ci2: "Email",
-        ci2v: "go.to.2008.6.1@gmail.com",
+        ci2v: "contact@tilvix.net",
         ci3: "Focus",
         ci3v: "Flutter • UI/UX • Performance • Clean Code",
         scrollTop: "Top ⬆️",
@@ -533,7 +533,7 @@ const PROJECTS = {
             {
                 labelAr: "تواصل واتساب 💚",
                 labelEn: "WhatsApp 💚",
-                url: "https://wa.me/201283713447"
+                url: "https://wa.me/201015736978"
             },
         ],
 
